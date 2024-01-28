@@ -37,5 +37,13 @@ class UserService {
         }
         return null;
     }
+
+    async updateProfile(id, data) {
+      const user = await UserModel.findByIdAndUpdate({_id:id}, { $set:{email: data.email, userName: data.userName}})
+      if(user) {
+        return user;
+      }
+      return null;
+    }
 }
 module.exports = UserService;

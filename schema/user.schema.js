@@ -11,8 +11,14 @@ const register = Joi.object({
     email: Joi.string().email().required(),
 });
 
+const profile = Joi.object({
+    userName: Joi.string().required(),
+    email: Joi.string().email().required(),
+});
+
 
 module.exports = {
     login,
-    register
+    register,
+    profile
 }
